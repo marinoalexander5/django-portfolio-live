@@ -1,0 +1,1 @@
+web: gunicorn cvdigital.wsgi --log-file
