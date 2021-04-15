@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '@5x732wl-&5(nc@z!b6u_keb8uhas8m$n@@!9y4h8b8r-9k-q8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['alexander-marino-portfolio.herokuapp.com', '127.0.0.1']
 
@@ -64,7 +64,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'social_django.middleware.SocialAuthExceptionMiddleware',
+    #'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'cvdigital.urls'
@@ -151,7 +151,7 @@ USE_L10N = True
 USE_TZ = True
 
 
-GEOIP_PATH = os.path.join(BASE_DIR, 'geodjango/geoip')
+GEOIP_PATH = os.path.join(BASE_DIR, 'geodjango/geiop')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/

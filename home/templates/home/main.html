@@ -1,0 +1,280 @@
+{% extends "home/base_menu.html" %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block head %}
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/slick.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/slick-theme.css' %}"/>
+{% endblock %}
+
+{% block content %}
+
+<!-- Background -->
+<div class="container">
+    <img class="bg-img" src="{% static 'home/images/home-bg-blue.jpg' %}" alt="">
+    <div class="img-overlay"></div>
+</div>
+
+<!-- About -->
+<div class="container">
+    <div class="row about" id="about">
+        <h2 class="text-white w-100 d-flex justify-content-center pb-2 pb-sm-4">About</h2>
+        <div class="col-sm-6 d-flex justify-content-center">
+            <img src="{% static 'home/images/home-about.jpeg' %}" class="img-fluid rounded-circle my-auto">
+        </div>
+        <div class="col-sm-6 mt-3 mt-sm-0">
+            <p class="text-white">I'm a sound engineer interested in applying machine learning
+                techniques for scientific research. I am currently part of the 
+                Underwater Acoustics Research Group created to develop hardware 
+                and software tools to apply passive acoustic monitoring of cetaceans.
+            </p>
+
+            <p class="text-white">This site is meant to showcase a combination of my interests
+            and projects, including bioacoustics, web development, machine 
+            learning and some photography gathered during fieldwork. I am always 
+            looking for new challenges and opportunities to learn.</p>
+            
+            <ul class="social-links d-flex justify-content-center">
+                <li><a href="https://www.linkedin.com/in/marino-alexander/" target="_blank"><span class="fa fa-lg fa-linkedin social-links"></span></a></li>
+                <li><a href="https://github.com/marinoalexander5" target="_blank"><span class="fa fa-lg fa-github social-links"></span></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <hr class="w-100 rounded bg-light my-5" id="apps">
+
+    <!-- Apps -->
+    <div class="row">
+        <h2 class="text-white w-100 d-flex justify-content-center pb-2 pb-sm-4">Apps</h2>
+        <div id="myCarousel" class="carousel slide w-100" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="d-flex justify-content-center">
+                    <img src="{% static 'home/images/mapa.png' %}" alt="...">
+                </div>
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>GeoDjango</h5>
+                  <p>Folium, Geoip2, Geopy</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="d-flex justify-content-center">
+                    <img src="{% static 'home/images/javascript-logo.png' %}" alt="...">
+                </div>
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Javascript</h5>
+                  <p>Plain Javascript projects</p>
+                </div>
+              </div>
+              <div class="carousel-item active">
+                <div class="d-flex justify-content-center">
+                    <img src="{% static 'home/images/mapa.png' %}" alt="...">
+                </div>
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>GeoDjango</h5>
+                  <p>Folium, Geoip2, Geopy</p>
+                </div>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <hr class="w-100 rounded bg-light my-5" id="publications">
+
+    <!-- Publications -->
+    <div class="row">
+        <h2 class="text-white w-100 d-flex justify-content-center pb-2 pb-sm-4">Publications</h2>
+        <ul class="text-white list-unstyled">
+            <li><p>Reyes, M.V.,<strong> Marino, A.</strong>, Dellabianca, N.A., Hevia, M., Torres, M., Raya Rey, A. and Melcón, M. (2018). Clicks of wild Burmeister’s porpoises (Phocoena spinipinnis) in Tierra del Fuego, Argentina. Marine Mammal Science. DOI: 10.1111/mms.12489</p></li>
+            <li><p>Veca, A. C.; Valese, N.; Ruzzante, J.; Albalat, A.;<strong> Marino, A.</strong>; Reyes Reyes, M. V. Autonomous System for Passive Acoustic Monitoring of Cetaceans. Journal of Acoustic Emission . Jan-Dec2020, Vol. 37, pS38-S54. 17p.</p></li>
+        </li>
+        </ul>
+    </div>
+
+    <hr class="w-100 rounded bg-light my-5" id="certificates">
+
+    <!-- Certificates -->
+    <div class="row">
+        <h2 class="text-white w-100 d-flex justify-content-center pb-2 pb-sm-4">Certificates</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow"> 
+                    <img class="card-img-top" src="{% static 'home\images\certificates-intro-to-tensorflow.jpg' %}" alt="">
+                    <div class="card-body">
+                        <h6 class="card-title">Introduction to Tensorflow for Artificial Intelligence, Machine Learning, and Deep Learning</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">DeepLearning.AI - Coursera</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow"> 
+                    <img class="card-img-top" src="{% static 'home\images\certificates-hyperparameter-tunning.jpg' %}" alt="">
+                    <div class="card-body">
+                        <h6 class="card-title">Improving Deep Neural networkss: Hyperparameter Tuning, Regularization and Optimization</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">DeepLearning.AI - Coursera</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow"> 
+                    <img class="card-img-top" src="{% static 'home\images\certificates-nn-dl.jpg' %}" alt="">
+                    <div class="card-body">
+                        <h6 class="card-title">Neural Networks and Deep Learning</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">DeeplearningAI - Coursera</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow"> 
+                    <img class="card-img-top" src="{% static 'home\images\certificates-bootstrap.jpg' %}" alt="">
+                    <div class="card-body">
+                        <h6 class="card-title">Front End Web-Development UI Frameworks and Tools: Bootstrap 4</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">The Hong Kong University of Science and Technology - Coursera</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow"> 
+                    <img class="card-img-top" src="{% static 'home\images\certificates-react.jpg' %}" alt="">
+                    <div class="card-body">
+                        <h6 class="card-title">Front End Web-Development with React</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">The Hong Kong University of Science and Technology - Coursera</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow"> 
+                    <img class="card-img-top" src="{% static 'home\images\certificates-data-visualization.png' %}" alt="">
+                    <div class="card-body">
+                        <h6 class="card-title">Data Visualization</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">Kaggle Micro Courses</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow"> 
+                    <img class="card-img-top" src="{% static 'home\images\certificates-pandas.png' %}" alt="">
+                    <div class="card-body">
+                        <h6 class="card-title">Pandas</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">Kaggle Micro Courses</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow"> 
+                    <img class="card-img-top" src="{% static 'home\images\certificates-intro-to-machine-learning.png' %}" alt="">
+                    <div class="card-body">
+                        <h6 class="card-title">Intro to Machine Learning</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">Kaggle Micro Courses</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow"> 
+                    <img class="card-img-top" src="{% static 'home\images\certificates-intermediate-machine-learning.png' %}" alt="">
+                    <div class="card-body">
+                        <h6 class="card-title">Intermediate Machine Learning</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">Kaggle Micro Courses</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="w-100 rounded bg-light my-5" id="photography">
+
+    <!-- Photography -->
+    <div class="row">
+        <h2 class="text-white w-100 d-flex justify-content-center pb-2 pb-sm-4">Photography</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow"> 
+                    <img class="card-img-top" src="{% static 'home\images\IMG_3063.JPG' %}" alt="">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow"> 
+                    <img class="card-img-top" src="{% static 'home\images\IMG_3063.JPG' %}" alt="">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow"> 
+                    <img class="card-img-top" src="{% static 'home\images\IMG_3063.JPG' %}" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow"> 
+                    <img class="card-img-top" src="{% static 'home\images\IMG_3063.JPG' %}" alt="">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow"> 
+                    <img class="card-img-top" src="{% static 'home\images\IMG_3063.JPG' %}" alt="">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow"> 
+                    <img class="card-img-top" src="{% static 'home\images\IMG_3063.JPG' %}" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow"> 
+                    <img class="card-img-top" src="{% static 'home\images\IMG_3063.JPG' %}" alt="">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow"> 
+                    <img class="card-img-top" src="{% static 'home\images\IMG_3063.JPG' %}" alt="">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow"> 
+                    <img class="card-img-top" src="{% static 'home\images\IMG_3063.JPG' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<footer class="fixed-bottom">
+    <small><a href="https://www.freepik.es/fotos/vintage">Foto de Vintage creado por benzoix - www.freepik.es</a></small>
+    <small><a href="https://www.freepnglogos.com/pics/javascript">Javascript from freepnglogos.com</a></small>
+</footer>
+{% endblock content %}
+
+{% block scripts %}
+    <script>
+        $(document).ready(function(){
+            $("#myCarousel").carousel();
+        });
+    </script>
+{% endblock %}
