@@ -1,6 +1,14 @@
 {% extends "home/base_bootstrap.html" %}
 
+{% load static %}
+
+{% block head %}
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'home/css/main.css' %}" type="text/css">
+{% endblock %}
+
 {% block navbar %}
+<div class="container">
     <nav class="navbar navbar-expand-sm navbar-dark my-3">
         <a class="navbar-brand text-white display-2" href="#">Portfolio</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,14 +20,14 @@
                     <a class="nav-link" href="#about">About <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#apps" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Apps
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">GeoDjango</a>
-                    <a class="dropdown-item" href="#">JavaScript</a>
-                    <a class="dropdown-item" href="#">Image Classifier</a>
-                    <a class="dropdown-item" href="#">Iris Classifier</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">GeoDjango</a>
+                        <a class="dropdown-item" href="{% url 'jsprojects:main' %}">JavaScript</a>
+                        <a class="dropdown-item" href="#">Image Classifier</a>
+                        <a class="dropdown-item" href="#">Iris Classifier</a>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -39,4 +47,5 @@
             </ul>
         </div>
     </nav>
+</div>
 {% endblock %}

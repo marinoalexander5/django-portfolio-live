@@ -20,5 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('measurements/', include('geodjango.urls')),
+    path('jsprojects/', include('jsprojects.urls')),
     # path('iris/', include('iris.urls')),
 ]

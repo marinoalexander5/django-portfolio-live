@@ -1,0 +1,66 @@
+{% extends "jsprojects/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row mt-5 pt-5 bg-gradient-primary">
+        <div class="col-md-4">
+            <div class="card mb-4 box-shadow"> 
+                <a href="{% url 'jsprojects:bg-color' %}">
+                    <img class="card-img-top" src="{% static 'jsprojects/images/bg-color.png' %}" alt="">
+                </a>
+                <div class="card-body">
+                    <h6 class="card-title">Random background color generator</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4 box-shadow"> 
+                <a href="{% url 'jsprojects:bg-video' %}">
+                    <img class="card-img-top" src="{% static 'jsprojects/images/bg-video.png' %}" alt="">
+                </a>
+                <div class="card-body">
+                    <h6 class="card-title">Background video with play and pause control. Multiple video source switching.</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4 box-shadow"> 
+                <img class="card-img-top" src="{% static 'jsprojects/images/coming-soon.png' %}" alt="Coming soon">
+                <div class="card-body">
+                    <h6 class="card-title">Coming Soon</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-4 box-shadow"> 
+                <img class="card-img-top" src="{% static 'jsprojects/images/coming-soon.png' %}" alt="Coming soon">
+                <div class="card-body">
+                    <h6 class="card-title">Coming Soon</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4 box-shadow">  
+                <img class="card-img-top" src="{% static 'jsprojects/images/coming-soon.png' %}" alt="Coming soon">
+                <div class="card-body">
+                    <h6 class="card-title">Coming Soon</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4 box-shadow"> 
+                <img class="card-img-top" src="{% static 'jsprojects/images/coming-soon.png' %}" alt="Coming soon">
+                <div class="card-body">
+                    <h6 class="card-title">Coming Soon</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     # Apps
     'home',
     #'iris',
-    'geodjango',    
+    'geodjango',
+    'jsprojects',    
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

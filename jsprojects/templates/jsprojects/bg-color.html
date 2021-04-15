@@ -1,0 +1,15 @@
+{% extends "jsprojects/base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class="d-flex align-items-center justify-content-center vh-100">
+            <div class="d-flex flex-column">
+                <div class="mx-auto bg-dark bg-gradient text-white px-5 py-3 mb-3 rounded-pill">Background color : <span id="color">#5ABC936</span></div>
+                <div id="btn" class="btn btn-outline-dark btn-lg mx-5">CLICK ME</div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'jsprojects\js\bg-color.js' %}"></script>    
+{% endblock %}

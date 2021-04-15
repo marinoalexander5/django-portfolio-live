@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@500&display=swap');
+
+html,body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(to bottom, rgba(3,75, 82, 1) 0%, rgba(3,75, 82, 0) 70%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.25;
+    z-index: 1;
+  }
+
+.title {
+    font-family: 'Kiwi Maru', serif;
+    position: relative;
+    z-index: 2;
+}  
+
+.container {
+    z-index: 2;
+  }
+  
+#bg-video {
+    max-width: 100%;
+    min-height: 100%;
+    position: fixed;
+    z-index: 0;
+  }
+
+.btn {
+    z-index: 2;
+    position: relative;
+}
+
+.title-bg {
+    background: rgba(169, 169, 169, 0.5);
+}
+
+.preloader {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position:fixed;
+    z-index: 3;
+    display: flex;
+    background: #1774d2;
+}
+
+.hide{
+    display: none;
+}
+
+.navbar-logo img{
+    max-width: 40px;
+    max-height: 40px;
+}
+
+.card-img-top{
+    max-height: 160px;
+}

@@ -2,12 +2,6 @@
 {% load static %}
 {% block title %}Home{% endblock %}
 
-{% block head %}
-    <!-- Slick Carousel -->
-    <link rel="stylesheet" type="text/css" href="{% static 'home/css/slick.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'home/css/slick-theme.css' %}"/>
-{% endblock %}
-
 {% block content %}
 
 <!-- Background -->
@@ -54,41 +48,42 @@
               <li data-target="#myCarousel" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="d-flex justify-content-center">
-                    <img src="{% static 'home/images/mapa.png' %}" alt="...">
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-center">
+                        <img src="{% static 'home/images/mapa.png' %}" alt="...">
+                    </div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>GeoDjango</h5>
+                        <p>Folium, Geoip2, Geopy</p>
+                    </div>
                 </div>
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>GeoDjango</h5>
-                  <p>Folium, Geoip2, Geopy</p>
+                <div class="carousel-item">
+                <a href="{% url 'jsprojects:main' %}">
+                    <div class="d-flex justify-content-center">
+                        <img src="{% static 'home/images/javascript-logo.png' %}" alt="...">
+                    </div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Javascript</h5>
+                        <p>Plain Javascript projects</p>
+                    </div>
                 </div>
-              </div>
-              <div class="carousel-item">
-                <div class="d-flex justify-content-center">
-                    <img src="{% static 'home/images/javascript-logo.png' %}" alt="...">
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center">
+                        <img src="{% static 'home/images/mapa.png' %}" alt="...">
+                    </div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>GeoDjango</h5>
+                        <p>Folium, Geoip2, Geopy</p>
+                    </div>
                 </div>
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Javascript</h5>
-                  <p>Plain Javascript projects</p>
-                </div>
-              </div>
-              <div class="carousel-item active">
-                <div class="d-flex justify-content-center">
-                    <img src="{% static 'home/images/mapa.png' %}" alt="...">
-                </div>
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>GeoDjango</h5>
-                  <p>Folium, Geoip2, Geopy</p>
-                </div>
-              </div>
             </div>
             <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
             </a>
             <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
             </a>
         </div>
     </div>
