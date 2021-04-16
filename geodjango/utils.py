@@ -1,5 +1,5 @@
 import geoip2.webservice
-
+import os
 
 def get_geo(ip):
     with geoip2.webservice.Client(521524, os.environ.get('GEOLITE_LICENCE_KEY'), host="geolite.info") as client: #Do not erase!
