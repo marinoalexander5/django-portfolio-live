@@ -13,12 +13,11 @@ def calculate_distance_view(request):
 
     geolocator = Nominatim(user_agent='geodjango')
     
-    # ip = get_ip_address(request)
-    ip = '181.169.96.50'
+    ip = get_ip_address(request)
     country, city, l_lat, l_lon = get_geo(ip)
 
     # location coordinates
-    location = geolocator.geocode(city)
+    location = geolocator.reverse(f'{l_lat}, {l_lon}')
     pointA = (l_lat, l_lon)
     d_lat = l_lat
     d_lon = l_lon
@@ -26,7 +25,7 @@ def calculate_distance_view(request):
     m = folium.Map(width='100%', height='100%', location=get_center_coordinates(l_lat, l_lon), min_zoom=1)
 
     # Current IP location
-    folium.Marker([l_lat, l_lon], tooltip='Click for details', popup=city['city'],
+    folium.Marker([l_lat, l_lon], tooltip='Click for details', popup=city,
         icon=folium.Icon(color='red', icon='fa map-marker-alt')).add_to(m)
 
     if form.is_valid():
@@ -47,7 +46,7 @@ def calculate_distance_view(request):
         m = folium.Map(width='100%', height='100%', location=get_center_coordinates(l_lat, l_lon, d_lat, d_lon), zoom_start=get_zoom(distance), min_zoom=1.5) 
 
         # Current IP location
-        folium.Marker([l_lat, l_lon], tooltip='Click for details', popup=city['city'],
+        folium.Marker([l_lat, l_lon], tooltip='Click for details', popup=city,
             icon=folium.Icon(color='red', icon='fa map-marker-alt')).add_to(m)
 
         # Destination location

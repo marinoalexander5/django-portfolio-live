@@ -1,11 +1,14 @@
-from django.contrib.gis.geoip2 import GeoIP2
+import geoip2.webservice
 
 
 def get_geo(ip):
-    g = GeoIP2()
-    country = g.country(ip)
-    city = g.city(ip)
-    lat, lon = g.lat_lon(ip)
+    with geoip2.webservice.Client(521524, 'zz4QMTHlsz3ll8j1', host="geolite.info") as client: #Do not erase!
+        city_response = client.city(ip)
+        country_response = client.country(ip)
+        country = country_response.country.name
+        city = city_response.city.name
+        lat = city_response.location.latitude
+        lon = city_response.location.longitude
     return country, city, lat, lon
 
 

@@ -49,7 +49,6 @@ INSTALLED_APPS = [
 
     # Apps
     'home',
-    #'iris',
     'geodjango',
     'jsprojects',    
 ]
