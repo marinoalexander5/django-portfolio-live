@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 import django_heroku
+import cloudinary
+import cloudinary_storage
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -49,10 +51,15 @@ INSTALLED_APPS = [
     'rest_framework', 
     #'social_django',  
 
+    # Media files storage
+    'cloudinary',
+    'cloudinary_storage',
+
     # Apps
     'home',
     'geodjango',
     'jsprojects',    
+    'img_classifier',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -129,7 +136,7 @@ except:
     print('When you want to use social login, please see dj4e-samples/github_settings-dist.py')
 
 AUTHENTICATION_BACKENDS = (
-    'social_core.backends.github.GithubOAuth2',
+    # 'social_core.backends.github.GithubOAuth2',
     # 'social_core.backends.twitter.TwitterOAuth',
     # 'social_core.backends.facebook.FacebookOAuth2',
 
@@ -157,6 +164,16 @@ GEOIP_PATH = os.path.join(BASE_DIR, 'geodjango/geiop')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
+
+# Cloudinary storage
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get('CLOUD_NAME'),
+    'API_KEY': os.environ.get('API_KEY'),
+    'API_SECRET': os.environ.get('API_SECRET'),
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
