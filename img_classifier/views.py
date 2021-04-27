@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .utils import classify_image
 from django.core.files.storage import default_storage
 from .forms import ImageForm
@@ -12,16 +13,23 @@ def index(request):
         if form.is_valid():
             new_img = form.save()
             pk = new_img.pk
-            #for development, fix for production
-            prediction = classify_image(os.path.join('media','img_classifier', os.path.basename(new_img.image.name)))
-            Image.objects.filter(pk=pk).update(prediction=prediction)
+            prediction_label, prediction_value = classify_image(new_img.image.url)
+            Image.objects.filter(pk=pk).update(prediction_label=prediction_label)
+            Image.objects.filter(pk=pk).update(prediction_value=prediction_value)
 
-        return redirect('img_classifier/index.html')
+        return redirect(request.path)
     else:
         form = ImageForm()
-        images = Image.objects.all()
+        image_list = Image.objects.all().order_by('-id')
+        # infinite scroll
+        page = request.GET.page('page', 1)
+        paginator = Paginator(images, 5)
+        try:
+            images = paginator.page(page)
+        except PageNotAnInteger:
+            images = paginator.page(1)
+        except EmptyPage:
+            images = paginator.page(paginator.num_pages)
+            
         context = {'form': form, 'images': images}
     return render(request, 'img_classifier/index.html', context)
-
-def ImageListView():
-    pass

@@ -45,6 +45,7 @@
             <ol class="carousel-indicators">
               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
               <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -53,8 +54,8 @@
                             <img src="{% static 'home/images/mapa.png' %}" alt="...">
                         </div>
                         <div class="carousel-caption d-none d-md-block">
-                            <h5 class="text-dak">GeoDjango</h5>
-                            <p class="text-dak">Folium, Geoip2, Geopy</p>
+                            <h5 class="text-white">GeoDjango</h5>
+                            <p class="text-white">Folium, Geoip2, Geopy</p>
                         </div>
                     </a>
                 </div>
@@ -64,8 +65,19 @@
                             <img src="{% static 'home/images/javascript-logo.png' %}" alt="...">
                         </div>
                         <div class="carousel-caption d-none d-md-block">
-                            <h5 class="text-dark">Javascript</h5>
-                            <p class="text-dark">Plain Javascript projects</p>
+                            <h5 class="text-white">Javascript</h5>
+                            <p class="text-white">Plain Javascript projects</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="{% url 'img_classifier:main' %}">
+                        <div class="d-flex justify-content-center">
+                            <img src="{% static 'home/images/computer-vision.png' %}" alt="...">
+                        </div>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 class="text-white">Image Classifier</h5>
+                            <p class="text-white">Keras, Transfer Learning</p>
                         </div>
                     </a>
                 </div>

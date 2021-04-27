@@ -167,9 +167,10 @@ GEOIP_PATH = os.path.join(BASE_DIR, 'geodjango/geiop')
 
 # Cloudinary storage
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.environ.get('CLOUD_NAME'),
-    'API_KEY': os.environ.get('API_KEY'),
-    'API_SECRET': os.environ.get('API_SECRET'),
+    'CLOUD_NAME': os.environ.get('CLOUDINARY_NAME'),
+    'API_KEY': os.environ.get('CLOUDINARY_KEY'),
+    'API_SECRET': os.environ.get('CLOUDINARY_SECRET'),
+    'CLOUDINARY_URL':os.environ.get('CLOUDINARY_URL')
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'

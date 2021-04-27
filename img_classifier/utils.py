@@ -2,9 +2,23 @@ from keras.preprocessing.image import load_img, img_to_array
 from keras.applications.vgg16 import preprocess_input, decode_predictions
 from .apps import ImgClassifierConfig as ImgClassifier
 
+from io import BytesIO
+import requests
+import urllib
+from PIL import Image
+
 def classify_image(image_url):
+    # get image from url
+    response = requests.get(image_url)
+    img = Image.open(BytesIO(response.content))
+    img = img.convert('RGB')
+    image = img.resize((224, 224), Image.NEAREST)
+
+    # response = requests.get(image_url)
+    # response.raise_for_status()
+    # f = io.BytesIO(response.content)
     # load image
-    image = load_img(image_url, target_size=(224, 224))
+    # image = load_img(f, target_size=(224, 224))
     # convert to numpy array
     image = img_to_array(image)
     # reshape
@@ -17,4 +31,5 @@ def classify_image(image_url):
     label = decode_predictions(yhat)
     # retrieve highest probability class
     label = label[0][0]
-    return label[1]
+
+    return (label[1], label[2]*100)
