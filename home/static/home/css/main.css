@@ -107,8 +107,16 @@ hr {
   margin: 0.5em auto; 
 }
 
+.carousel-inner{
+  height: 400px
+}
+
 .carousel-inner img{
   max-height: 250px;
   max-width: 250px;
   margin: auto;
+}
+
+.carousel-caption{
+  position: inherit;
 }

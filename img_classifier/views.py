@@ -21,15 +21,5 @@ def index(request):
     else:
         form = ImageForm()
         image_list = Image.objects.all().order_by('-id')
-        # infinite scroll
-        page = request.GET.page('page', 1)
-        paginator = Paginator(images, 5)
-        try:
-            images = paginator.page(page)
-        except PageNotAnInteger:
-            images = paginator.page(1)
-        except EmptyPage:
-            images = paginator.page(paginator.num_pages)
-            
         context = {'form': form, 'images': images}
     return render(request, 'img_classifier/index.html', context)

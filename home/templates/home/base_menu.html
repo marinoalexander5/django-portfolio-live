@@ -24,9 +24,9 @@
                     Apps
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">GeoDjango</a>
+                        <a class="dropdown-item" href="{% url 'geodjango:calculate_view' %}">GeoDjango</a>
                         <a class="dropdown-item" href="{% url 'jsprojects:main' %}">JavaScript</a>
-                        <a class="dropdown-item" href="#">Image Classifier</a>
+                        <a class="dropdown-item" href="{% url 'img_classifier:main' %}">Image Classifier</a>
                         <a class="dropdown-item" href="#">Iris Classifier</a>
                     </div>
                 </li>

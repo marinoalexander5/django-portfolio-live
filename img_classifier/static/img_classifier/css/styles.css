@@ -12,6 +12,7 @@ body{
 
 .predicted-img img{
     object-fit: contain;
+    max-height: 325px;
 }
 
 .row .intro{
@@ -29,4 +30,8 @@ body{
 
 .img-form{
     width: auto;
+}
+
+.hide{
+    display: none;
 }

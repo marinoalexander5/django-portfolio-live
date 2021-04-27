@@ -38,7 +38,7 @@
         </div>
         <div class="row mt-4 py-4">
             <div class="col bg-light border border-dark rounded pt-2">
-                <p>This Computer Vision projects uses pre-trained model VGG16 to classify user uploaded images between a total of 1,000 clases. VGG model uses Convolutional Neural Networks (CNN) to extract features from a large image dataset. Along with the prediction label, you can see the probability of the image corresponding to the displayed label.</p>
+                <p>This Computer Vision projects uses pre-trained model VGG16 to classify user uploaded images between a total of 1,000 clases. VGG model uses Convolutional Neural Networks (CNN) to extract features from an approximate of 1.2 million training images. Along with the prediction label, you can see the probability of the image corresponding to the displayed label.</p>
                 <p>Implemented through Keras framework, images hosted in Cloudinary.</p>
                 <div class="d-flex align-items-center justify-content-center pb-4 img-form">
                     <form method="POST" enctype="multipart/form-data" class="form-control bg-light img-form">
@@ -46,14 +46,17 @@
                         <div class="shadow-lg mx-auto">
                             {{ form|crispy }}
                         </div>
-                        <div class="d-flex justify-content-center">
-                            <button class="btn btn-info upload-btn" type="submit">Upload</button>
+                        <div class="row">
+                            <button class="btn btn-info upload-btn ml-5" id="upload-img" >Upload</button>
+                            <div class="spinner-border text-info ml-5 hide" id="spinner" type="submit" role="status">
+                            </div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
         <div class="col col-sm-6 offset-sm-3">
+
             {% if images %}        
                 {% for image in images %}
                 <div class="row d-flex justify-content-center py-2">
@@ -73,10 +76,6 @@
     </div>
 {% endblock content %}
 
-
 {% block scripts %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js" integrity="sha512-fHXRw0CXruAoINU11+hgqYvY/PcsOWzmj0QmcSOtjlJcqITbPyypc8cYpidjPurWpCnlB8VKfRwx6PIpASCUkQ==" crossorigin="anonymous"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/infinite.min.js"></script>
-{% endblock scripts %}
-
+ <script src="{% static 'img_classifier\js\spinner.js' %}"></script>
+{% endblock %}
