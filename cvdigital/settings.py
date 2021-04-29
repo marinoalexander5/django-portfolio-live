@@ -13,8 +13,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 import django_heroku
-import cloudinary
-import cloudinary_storage
+# import cloudinary
+# import cloudinary_storage
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -52,9 +52,9 @@ INSTALLED_APPS = [
     'rest_framework', 
     #'social_django',  
 
-    # Media files storage
-    'cloudinary',
-    'cloudinary_storage',
+    # # Media files storage
+    # 'cloudinary',
+    # 'cloudinary_storage',
 
     # Apps
     'home',
