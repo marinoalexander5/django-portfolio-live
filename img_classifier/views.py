@@ -21,5 +21,5 @@ def index(request):
     else:
         form = ImageForm()
         image_list = Image.objects.all().order_by('-id')
-        context = {'form': form, 'images': images}
+        context = {'form': form, 'images': images_list}
     return render(request, 'img_classifier/index.html', context)
