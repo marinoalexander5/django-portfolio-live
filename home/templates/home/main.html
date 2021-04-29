@@ -46,6 +46,7 @@
               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
               <li data-target="#myCarousel" data-slide-to="1"></li>
               <li data-target="#myCarousel" data-slide-to="2"></li>
+              <li data-target="#myCarousel" data-slide-to="3"></li>
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -78,6 +79,17 @@
                         <div class="carousel-caption d-none d-md-block">
                             <h5 class="text-white">Image Classifier</h5>
                             <p class="text-white">Keras, Transfer Learning</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="{% url 'blog:blog-home' %}">
+                        <div class="d-flex justify-content-center">
+                            <img src="{% static 'home/images/blog-logo-2.png' %}" alt="blog">
+                        </div>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 class="text-white">Blog</h5>
+                            <p class="text-white">CRUD, Pagination, Signals, Email password reset</p>
                         </div>
                     </a>
                 </div>

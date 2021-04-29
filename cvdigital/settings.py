@@ -60,6 +60,8 @@ INSTALLED_APPS = [
     'geodjango',
     'jsprojects',    
     'img_classifier',
+    'blog',
+    'users',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -107,7 +109,7 @@ DATABASES = {
     }
 }
 
-
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -143,9 +145,6 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-LOGOUT_REDIRECT_URL = '/'
-LOGIN_REDIRECT_URL = '/'
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -159,11 +158,16 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Login routing
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = 'login'
 
-GEOIP_PATH = os.path.join(BASE_DIR, 'geodjango/geiop')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
+
+
 
 # Cloudinary storage
 CLOUDINARY_STORAGE = {
@@ -185,5 +189,13 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 578
+EMAIL_USE_TLS = True
+EMAL_HOST_USER = os.environ.get('EMAIL_USER')
+EMAL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
+
 
 django_heroku.settings(locals())
