@@ -197,20 +197,17 @@ if USE_S3:
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
     AWS_S3_FILE_OVERWRITE = False
-    AWS_DEFAULT_ACL = 'public-read'
+    AWS_DEFAULT_ACL = None#'public-read'
     # Static files
     AWS_LOCATION = 'static'
-    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}//{AWS_LOCATION}'
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}//{AWS_LOCATION}/'
     # STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     STATICFILES_LOCATION = 'static'
-    # STATICFILES_DIRS = [
-    #     os.path.join(BASE_DIR, 'static'),
-    # ]
-    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_STORAGE = 'cvdigital.storage_backends.StaticStorage'
     # Media Files
     MEDIA_LOCATION = 'media'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/'
-    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    DEFAULT_FILE_STORAGE = 'cvdigital.storage_backends.MediaStorage'
     # DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 else:
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -222,4 +219,4 @@ else:
     MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 
-django_heroku.settings(locals())
+django_heroku.settings(locals(), staticfiles=False)
