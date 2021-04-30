@@ -1,5 +1,5 @@
 from keras.preprocessing.image import load_img, img_to_array
-from keras.applications.vgg16 import preprocess_input, decode_predictions
+from keras.applications.mobilenet import preprocess_input, decode_predictions
 from .apps import ImgClassifierConfig as ImgClassifier
 
 from io import BytesIO
@@ -14,9 +14,6 @@ def classify_image(image_url):
     img = img.convert('RGB')
     image = img.resize((224, 224), Image.NEAREST)
 
-    # response = requests.get(image_url)
-    # response.raise_for_status()
-    # f = io.BytesIO(response.content)
     # load image
     # image = load_img(f, target_size=(224, 224))
     # convert to numpy array
@@ -26,9 +23,9 @@ def classify_image(image_url):
     # prepare image for model
     image = preprocess_input(image)
     # predict across all 1,000 classes
-    yhat = ImgClassifier.model.predict(image)
+    predictions = ImgClassifier.model.predict(image)
     # convert probabilities to class labels
-    label = decode_predictions(yhat)
+    label = decode_predictions(predictions)
     # retrieve highest probability class
     label = label[0][0]
 
