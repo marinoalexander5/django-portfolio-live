@@ -50,7 +50,7 @@ importlib-metadata==4.0.0
 importlib-resources==5.1.2
 Jinja2==2.11.3
 jmespath==0.10.0
-Keras==2.4.3
+Keras
 Keras-Preprocessing==1.1.2
 Markdown==3.3.4
 MarkupSafe==1.1.1
@@ -83,7 +83,7 @@ sqlparse==0.4.1
 tensorboard==2.5.0
 tensorboard-data-server==0.6.0
 tensorboard-plugin-wit==1.8.0
-tensorflow-cpu==2.4.1
+tensorflow-cpu
 tensorflow-estimator==2.4.0
 termcolor==1.1.0
 typing-extensions==3.7.4.3
