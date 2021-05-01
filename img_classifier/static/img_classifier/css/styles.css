@@ -1,0 +1,37 @@
+body{
+    background-color: cadetblue;
+}
+
+.form-control {
+    height: auto;
+}
+
+.predicted-img{
+    max-height: 400px;
+}
+
+.predicted-img img{
+    object-fit: contain;
+    max-height: 325px;
+}
+
+.row .intro{
+    margin-left: unset;
+    margin-right: unset;
+}
+
+.upload-btn{
+    width: 50%;
+}
+
+#id_image{
+    background-color: #f8f9fa;
+}
+
+.img-form{
+    width: auto;
+}
+
+.hide{
+    display: none;
+}
