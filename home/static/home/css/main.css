@@ -4,6 +4,10 @@
   font-family: 'Poppins', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body{
   background: none;
 }
@@ -119,4 +123,12 @@ hr {
 
 .carousel-caption{
   position: inherit;
+}
+
+#topBtn{
+  display: none;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 5;
 }

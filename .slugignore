@@ -1,0 +1,8 @@
+# Ignore static folders
+/static/
+static
+static/
+/static
+
+/media/
+/media

@@ -187,7 +187,7 @@ EMAIL_USE_TLS = True
 EMAL_HOST_USER = os.environ.get('EMAIL_USER')
 EMAL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
 
-USE_S3 = os.environ.get('USE_S3') == 'True'
+USE_S3 = False#os.environ.get('USE_S3') == 'True'
 
 if USE_S3:
     # AWS storage

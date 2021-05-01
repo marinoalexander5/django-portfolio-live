@@ -16,8 +16,10 @@
 
 {% block content %}
     <div class="preloader">
+        {% comment %} <video muted autoplay loop>
+            <source src="{% static 'jsprojects/videos/preloader.mp4' %}" type="video/mp4">
+        </video> {% endcomment %}
         <iframe class="w-100 h-100" src="https://giphy.com/embed/TvLuZ00OIADoQ"></iframe>
-    <p><a href="https://giphy.com/gifs/TvLuZ00OIADoQ">via GIPHY</a></p> 
     </div>
     <header>
         <div class="overlay d-none d-sm-block"></div>
@@ -30,10 +32,10 @@
             <div class="col-6 col-sm-3 align-self-end pb-3">
                 <div class="btn-group" role="group" aria-label="Basic example">
                     <button id="btn-play" type="button" class="btn btn-primary">
-                        <span class="fa fa-play"></i></span>
+                        <i class="fa fa-play"></i>
                     </button>
                     <button id="btn-pause" type="button" class="btn btn-danger">
-                        <span class="fa fa-pause"></i></span>
+                        <i class="fa fa-pause"></i>
                     </button>
                     </div>
             </div>
@@ -52,7 +54,7 @@
                     <label class="btn btn-primary" for="btnradio2">Forrest</label>
                     
                     <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-                    <label class="btn btn-primary" for="btnradio3">Mountain</label>
+                    <label class="btn btn-primary" for="btnradio3">Road</label>
 
                     <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
                     <label class="btn btn-primary" for="btnradio4">Bird</label>
@@ -60,6 +62,9 @@
             </div>
         </div>
     </div>  
+    <footer class="fixed-bottom">
+        <a href="https://giphy.com/gifs/TvLuZ00OIADoQ">via GIPHY</a>
+    </p></footer>
 {% endblock %}
 
 {% block scripts %}

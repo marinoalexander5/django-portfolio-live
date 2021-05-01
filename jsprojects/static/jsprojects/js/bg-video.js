@@ -25,7 +25,8 @@ function changeVideo() {
     for (let i = 0; i < radioBtns.length; i++) {
         if (radioBtns[i].checked) {
             bgVideo.pause();
-            document.getElementsByTagName("source")[0].src = "/static/jsprojects/videos/" + videos[i] + ".mp4";     
+            // check django-compressor to do this dinamically
+            document.getElementsByTagName("source")[0].src = "https://alexander-marino-portfolio.s3.amazonaws.com/static/jsprojects/videos/" + videos[i] + ".mp4";
             bgVideo.load();
             bgVideo.play();
         }    

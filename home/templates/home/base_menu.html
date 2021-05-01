@@ -20,10 +20,10 @@
                     <a class="nav-link" href="#about">About <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="appNavbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Apps
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu" aria-labelledby="appNavbarDropdown">
                         <a class="dropdown-item" href="{% url 'geodjango:calculate_view' %}">GeoDjango</a>
                         <a class="dropdown-item" href="{% url 'jsprojects:main' %}">JavaScript</a>
                         <a class="dropdown-item" href="{% url 'img_classifier:main' %}">Image Classifier</a>
@@ -42,11 +42,19 @@
                     <a class="nav-link" href="#photography">Photography</a>
                 </li>
             </ul>
-            <ul class="navbar-nav mr-2">
+            <ul class="navbar-nav ml-5">
                 {% if user.is_authenticated %} 
-                <li class="nav-item">
-                    <a class="nav-link" href="logout">Logout</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="userNavbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="rounded-circle" height="40px" width="40px" src="{{ user.profile.image.url }}">
+                        {{ user.username }}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="userNavbarDropdown">
+                        <a class="dropdown-item" href="{% url 'profile' %}">Edit Profile</a>
+                        <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                    </div>
                 </li>
+
                 {% else %} 
                 <li class="nav-item">
                     <a class="nav-link" href="login">Login</a>

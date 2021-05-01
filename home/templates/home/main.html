@@ -10,6 +10,9 @@
     <div class="img-overlay"></div>
 </div>
 
+<!-- Back to top button -->
+<button class="btn btn-primary rounded-circle" onclick="topFunction()" id="topBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
+
 <!-- About -->
 <div class="container">
     <div class="row about" id="about">
@@ -284,9 +287,5 @@
 {% endblock content %}
 
 {% block scripts %}
-    <script>
-        $(document).ready(function(){
-            $("#myCarousel").carousel();
-        });
-    </script>
+    <script src="{% static 'home/js/home.js' %}"></script>
 {% endblock %}
