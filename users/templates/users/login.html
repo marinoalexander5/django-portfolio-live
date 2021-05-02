@@ -1,25 +1,36 @@
-{% extends "blog/base.html" %}
+{% extends "users/base.html" %}
+{% load static %}
 {% load crispy_forms_tags %}
+
 {% block content %}
-	<div class="content-section">
+<div class="container">
+	{% if user.is_authenticated %}
+	<div class="text-white mt-5">
+		<p>You are logged in as {{ user.username }}</p>
+		<p><a class="btn btn-sm btn-info " href="{% url 'logout' %}">Logut</a> to Sign in as another user or go to 
+			<a class="btn btn-sm btn-info" href="{% url 'profile' %}">Profile</a> to edit your settings.</p>
+	</div>
+	{% else %}
+	<div class="col col-sm-6 offset-sm-3">
 		<form method="POST">
 			{% csrf_token %}
-			<fieldset class="form-group">
+			<fieldset class="form-group text-white">
 				<legend class="border-bottom md-4">Login</legend>
 				{{ form|crispy }}
 			</fieldset>
 			<div class="form-group">
-				<button class="btn btn-outline-info" type="submit">Login</button>
-				<small class="text-muted ml-2">
-					{% comment %} <a href="{% url 'password_reset' %}">Forgot your password?</a> {% endcomment %}
-					<a href="#">Forgot your password?</a>
+				<button class="btn btn-info" type="submit">Login</button>
+				<small class="ml-2">
+					<a class="text-white" href="{% url 'password_reset' %}">Forgot your password?</a>
 				</small>
 			</div>
 		</form>
-		<div class="border-top pt-3">
-			<small class="text-muted">
-				Need An Account? <a class="ml-2" href="{% url 'register' %}">Sign Up</a>
+		<div class="border-top pt-3 text-white">
+			<small>
+				Need An Account? <a class="ml-2 btn btn-sm btn-outline-info text-white" href="{% url 'register' %}">Sign Up</a>
 			</small>
 		</div>
 	</div>
+	{% endif %}
+</div>
 {% endblock content %}

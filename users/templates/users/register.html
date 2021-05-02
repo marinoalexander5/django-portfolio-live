@@ -1,7 +1,17 @@
-{% extends "blog/base.html" %}
+{% extends "users/base.html" %}
 {% load crispy_forms_tags %}
+
+
 {% block content %}
-	<div class="content-section">
+<div class="container">
+	{% if user.is_authenticated %}
+	<div class="text-white mt-5">
+		<p>You are logged in as {{ user.username }}</p>
+		<p><a class="btn btn-sm btn-info " href="{% url 'logout' %}">Logut</a> to Sign in as another user or go to 
+			<a class="btn btn-sm btn-info" href="{% url 'profile' %}">Profile</a> to edit your settings.</p>
+	</div>
+    {% else %}
+	<div class="col col-sm-6 offset-sm-3 text-white mb-5">
 		<form method="POST">
 			{% csrf_token %}
 			<fieldset class="form-group">
@@ -9,13 +19,15 @@
 				{{ form|crispy }}
 			</fieldset>
 			<div class="form-group">
-				<button class="btn btn-outline-info" type="submit">Sign Up</button>
+				<button class="btn btn-info" type="submit">Sign Up</button>
 			</div>
 		</form>
 		<div class="border-top pt-3">
-			<small class="text-muted">
-				Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+			<small class="text-white">
+				Already Have An Account? <a class="ml-2 btn btn-sm btn-outline-info text-white" href="{% url 'login' %}">Sign In</a>
 			</small>
 		</div>
 	</div>
+	{% endif %}
+</div>
 {% endblock content %}

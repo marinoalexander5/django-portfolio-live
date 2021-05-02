@@ -1,0 +1,58 @@
+{% extends "home/base_bootstrap.html" %}
+{% load static %}
+{% block title %}Users{% endblock %}
+
+{% block head %}
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'home/css/main.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'users/css/user_styles.css' %}" type="text/css">
+{% endblock %}
+
+{% block background %}
+<!-- Background -->
+<div class="container">
+    <img class="bg-img" src="{% static 'home/images/home-bg-blue-lq.jpg' %}" alt="">
+    <div class="img-overlay"></div>
+</div>
+{% endblock %}
+
+{% block navbar %}
+<div class="container">
+    <nav class="navbar navbar-expand-sm navbar-dark my-3">
+        <a class="navbar-brand text-white display-2" href="{% url 'home:main' %}">Portfolio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mx-auto">
+
+            </ul>
+            <ul class="navbar-nav ml-5">
+                {% if user.is_authenticated %} 
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+                {% else %} 
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'register' %}">Register</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- Background -->
+<div class="container">
+    <img class="bg-img" src="{% static 'home/images/home-bg-blue-lq.jpg' %}" alt="">
+    <div class="img-overlay"></div>
+</div>
+{% endblock %}

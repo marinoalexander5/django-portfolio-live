@@ -1,15 +1,17 @@
-{% extends "home/base_menu.html" %}
+{% extends "home/base_navbar.html" %}
 {% load static %}
 {% block title %}Home{% endblock %}
 
-{% block content %}
-
+{% block background %}
 <!-- Background -->
 <div class="container">
     <img class="bg-img" src="{% static 'home/images/home-bg-blue-lq.jpg' %}" alt="">
     <div class="img-overlay"></div>
 </div>
+{% endblock %}
 
+
+{% block content %}
 <!-- Back to top button -->
 <button class="btn btn-primary rounded-circle" onclick="topFunction()" id="topBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
 
