@@ -35,3 +35,11 @@ body{
 .hide{
     display: none;
 }
+
+#topBtn2{
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    z-index: 5;
+  }

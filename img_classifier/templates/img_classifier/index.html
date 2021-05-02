@@ -10,23 +10,38 @@
 {% endblock %}
 
 {% block navbar %}
-<nav class="navbar navbar-light bg-light fixed-top">
-    <ul class="navbar-nav">
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <ul class="navbar-nav mr-auto">
         <li class="nav-item">
             <a class="navbar-brand" href="{% url 'home:main' %}">Portfolio</a>
         </li>
     </ul>
-    <ul class="navbar-nav mr-4">
+    <ul class="navbar-nav">
+        {% if user.is_authenticated %} 
         <li class="nav-item">
-            <a class="nav-link text-dark" href="#">Login</a>
+            <a class="nav-link" href="{% url 'profile' %}">Profile</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+        </li>
+        {% else %} 
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'register' %}">Register</a>
+        </li>
+        {% endif %}
     </ul>
 </nav>
 {% endblock %}
 
 {% block content %}
     <div class="container">
-        <div class="row mt-5 pt-5 d-flex align-items-center justify-content-center">
+        <!-- Back to top button -->
+        <button class="btn btn-light rounded-circle" onclick="topFunction()" id="topBtn2" title="Go to top"><i class="fa fa-arrow-up"></i></button>
+
+        <div class="row pt-5 d-flex align-items-center justify-content-center">
             <div class="mx-3">
                 <img src="{% static 'img_classifier\images\icon-2.png' %}" height="70px" width="70px">
             </div>
@@ -37,7 +52,7 @@
         </div>
         <div class="row mt-4 py-4">
             <div class="col bg-light border border-dark rounded pt-2">
-                <p>This Computer Vision projects uses pre-trained model VGG16 to classify user uploaded images between a total of 1,000 clases. VGG model uses Convolutional Neural Networks (CNN) to extract features from an approximate of 1.2 million training images. Along with the prediction label, you can see the probability of the image corresponding to the displayed label.</p>
+                <p>This Computer Vision projects uses pre-trained model MobileNet to classify user uploaded images between a total of 1,000 clases. MobileNet model uses Convolutional Neural Networks (CNN) to extract features from an approximate of 1.2 million training images. Along with the prediction label, you can see the probability of the image corresponding to the displayed label.</p>
                 <p>Implemented through Keras framework, images hosted in AWS S3 bucket.</p>
                 <div class="d-flex align-items-center justify-content-center pb-4 img-form">
                     <form method="POST" enctype="multipart/form-data" class="form-control bg-light img-form">
@@ -77,4 +92,5 @@
 
 {% block scripts %}
  <script src="{% static 'img_classifier\js\spinner.js' %}"></script>
+ <script src="{% static 'img_classifier\js\backToTop.js' %}"></script>
 {% endblock %}

@@ -10,6 +10,38 @@
   <link rel="stylesheet" href="{% static 'geodjango/css/main.css' %}" type="text/css">
 {% endblock %}
 
+{% block navbar %}
+<div class="container">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <a class="navbar-brand display-2" href="{% url 'home:main' %}">Portfolio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mx-auto">
+            </ul>
+            <ul class="navbar-nav ml-5">
+                {% if user.is_authenticated %} 
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+                {% else %} 
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'register' %}">Register</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+</div>
+{% endblock %}
+
 {% block content %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -32,7 +64,7 @@
 </div>
 
 <div class="container">
-  <div class="row d-flex align-items-center justify-content-center py-2">
+  <div class="row d-flex align-items-center justify-content-center py-2 mt-5">
       <h4>How far am I ? </h4>
       <img class="mb-2 mb-sm-1" src="{% static 'geodjango/images/mapas-y-banderas.png' %}" height=50px width=50px/>
   </div>
