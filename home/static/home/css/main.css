@@ -133,7 +133,8 @@ hr {
   z-index: 5;
 }
 
-.photography-card img{
+
+.img-thumbnail{
   height: 209px;
   width: 372px;
 }
