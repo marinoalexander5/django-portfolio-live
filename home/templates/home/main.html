@@ -2,6 +2,11 @@
 {% load static %}
 {% block title %}Home{% endblock %}
 
+{% comment %} {% block head %}
+<!-- LightBox --> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" />
+{% endblock %} {% endcomment %}
+
 {% block background %}
 <!-- Background -->
 <div class="container">
@@ -221,22 +226,47 @@
     <hr class="w-100 rounded bg-light my-5" id="photography">
 
     <!-- Photography -->
-    <div class="row">
+    <div class="row photography-card">
         <h2 class="text-white w-100 d-flex justify-content-center pb-2 pb-sm-4">Photography</h2>
         <div class="row">
             <div class="col-md-4">
-                <div class="card mb-4 box-shadow"> 
-                    <img class="card-img-top" src="{% static 'home\images\IMG_3063.JPG' %}" alt="">
+                <div class="card mb-4 box-shadow">
+                    <a href="{% static 'home\images\photography-1.jpg' %}" data-lightbox="photography-1" data-title="Antarctica"> 
+                        <img class="card-img-top img-thumbnail" src="{% static 'home\images\photography-1-thumbnail.jpg' %}" alt="">
+                    </a>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card mb-4 box-shadow"> 
-                    <img class="card-img-top" src="{% static 'home\images\IMG_3063.JPG' %}" alt="">
+                    <a href="{% static 'home\images\photography-2.jpg' %}" data-lightbox="photography-2" data-title="Mendoza, Argentina"> 
+                    <img class="card-img-top img-thumbnail" src="{% static 'home\images\photography-2-thumbnail.jpg' %}" alt="">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card mb-4 box-shadow"> 
-                    <img class="card-img-top" src="{% static 'home\images\IMG_3063.JPG' %}" alt="">
+                    <a href="{% static 'home\images\photography-3.jpg' %}" data-lightbox="photography-3" data-title="Antarctica"> 
+                    <img class="card-img-top img-thumbnail" src="{% static 'home\images\photography-3-thumbnail.jpg' %}" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow" height="300" width="300"> 
+                    <a href="{% static 'home\images\photography-4.jpg' %}" data-lightbox="photography-4" data-title="Antarctica"> 
+                    <img class="card-img-top img-thumbnail" src="{% static 'home\images\photography-4-thumbnail.jpg' %}" alt="">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow"> 
+                    <a href="{% static 'home\images\photography-5.jpg' %}" data-lightbox="photography-5" data-title="Snow petrel <i>(Pagodroma nivea)</i>"> 
+                    <img class="card-img-top img-thumbnail" src="{% static 'home\images\photography-5-thumbnail.jpg' %}" alt="">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow"> 
+                    <a href="{% static 'home\images\photography-6.jpg' %}" data-lightbox="photography-6" data-title="Iris"> 
+                    <img class="card-img-top img-thumbnail" src="{% static 'home\images\photography-6-thumbnail.jpg' %}" alt="">
                 </div>
             </div>
         </div>
@@ -244,35 +274,20 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="card mb-4 box-shadow"> 
-                    <img class="card-img-top" src="{% static 'home\images\IMG_3063.JPG' %}" alt="">
+                    <a href="{% static 'home\images\photography-7.jpg' %}" data-lightbox="photography-7" data-title="Antarctica"> 
+                    <img class="card-img-top img-thumbnail" src="{% static 'home\images\photography-7-thumbnail.jpg' %}" alt="">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card mb-4 box-shadow"> 
-                    <img class="card-img-top" src="{% static 'home\images\IMG_3063.JPG' %}" alt="">
+                    <a href="{% static 'home\images\photography-8.jpg' %}" data-lightbox="photography-8" data-title="Ushuaia, Argentina"> 
+                    <img class="card-img-top img-thumbnail" src="{% static 'home\images\photography-8-thumbnail.jpg' %}" alt="">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card mb-4 box-shadow"> 
-                    <img class="card-img-top" src="{% static 'home\images\IMG_3063.JPG' %}" alt="">
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card mb-4 box-shadow"> 
-                    <img class="card-img-top" src="{% static 'home\images\IMG_3063.JPG' %}" alt="">
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4 box-shadow"> 
-                    <img class="card-img-top" src="{% static 'home\images\IMG_3063.JPG' %}" alt="">
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4 box-shadow"> 
-                    <img class="card-img-top" src="{% static 'home\images\IMG_3063.JPG' %}" alt="">
+                    <a href="{% static 'home\images\photography-9.jpg' %}" data-lightbox="photography-9" data-title="Mylabris Beetle"> 
+                    <img class="card-img-top img-thumbnail" src="{% static 'home\images\photography-9-thumbnail.jpg' %}" alt="">
                 </div>
             </div>
         </div>
@@ -282,12 +297,14 @@
 
 
 
-<footer class="fixed-bottom">
-    <small><a href="https://www.freepik.es/fotos/vintage">Foto de Vintage creado por benzoix - www.freepik.es</a></small>
-    <small><a href="https://www.freepnglogos.com/pics/javascript">Javascript from freepnglogos.com</a></small>
+<footer class="d-flex justify-content-center">
+    <small><a class="text-white" href="https://www.freepik.es/fotos/vintage">Foto de Vintage creado por benzoix - www.freepik.es</a></small>
+     - 
+    <small><a class="text-white" href="https://www.freepnglogos.com/pics/javascript">Javascript from freepnglogos.com</a></small>
 </footer>
 {% endblock content %}
 
 {% block scripts %}
     <script src="{% static 'home/js/home.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js" integrity="sha512-k2GFCTbp9rQU412BStrcD/rlwv1PYec9SNrkbQlo6RZCf75l6KcC3UwDY8H5n5hl4v77IDtIPwOk9Dqjs/mMBQ==" crossorigin="anonymous"></script>
 {% endblock %}

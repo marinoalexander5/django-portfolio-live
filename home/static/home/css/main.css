@@ -132,3 +132,8 @@ hr {
   right: 50px;
   z-index: 5;
 }
+
+.photography-card img{
+  height: 209px;
+  width: 372px;
+}
