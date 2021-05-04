@@ -16,9 +16,9 @@
 
 {% block content %}
     <div class="preloader">
-        <video muted autoplay loop>
+        {% comment %} <video muted autoplay loop>
             <source src="{% static 'jsprojects/videos/preloader.mp4' %}" type="video/mp4">
-        </video>
+        </video> {% endcomment %}
         <iframe class="w-100 h-100" src="https://giphy.com/embed/TvLuZ00OIADoQ"></iframe>
     </div>
     <header>
@@ -30,14 +30,14 @@
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-6 col-sm-3 align-self-end pb-3">
-                <div class="btn-group" role="group" aria-label="Basic example">
+                <div class="btn-group mb-2" role="group" aria-label="Basic example">
                     <button id="btn-play" type="button" class="btn btn-primary">
                         <i class="fa fa-play"></i>
                     </button>
                     <button id="btn-pause" type="button" class="btn btn-danger">
                         <i class="fa fa-pause"></i>
                     </button>
-                    </div>
+                </div>
             </div>
             <div class="col-12 col-sm-6">
                 <div class="title w-100 text-white text-center title-bg p-3 rounded">
@@ -62,7 +62,7 @@
             </div>
         </div>
     </div>  
-    <footer>
+    <footer class="fixed-bottom">
         <a href="https://giphy.com/gifs/TvLuZ00OIADoQ">via GIPHY</a>
     </p></footer>
 {% endblock %}
