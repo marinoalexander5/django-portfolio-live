@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = (os.environ.get('DEBUG_VALUE') == 'True' )
+DEBUG = True#(os.environ.get('DEBUG_VALUE') == 'True' )
 
 ALLOWED_HOSTS = ['alexander-marino-portfolio.herokuapp.com', '127.0.0.1']
 
@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     # 'django_extensions', 
     'crispy_forms',  
     'rest_framework', 
+    'corsheaders',
     #'social_django',  
 
     # # Media files storage
@@ -63,6 +64,7 @@ INSTALLED_APPS = [
     'img_classifier',
     'blog',
     'users',
+    'digit_classifier',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -71,6 +73,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -129,6 +132,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Cors Headers Whitelist
+CORS_ALLOWED_ORIGINS = [
+    "https://alexander-marino-portfolio.herokuapp.com",
+    "http://localhost:3000",
+]
 
 # Configure the social login
 try:
@@ -188,7 +196,7 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
 
-USE_S3 = os.environ.get('USE_S3') == 'True'
+USE_S3 = False#os.environ.get('USE_S3') == 'True'
 
 if USE_S3:
     # AWS storage
