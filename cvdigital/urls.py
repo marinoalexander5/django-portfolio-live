@@ -38,6 +38,7 @@ urlpatterns = [
     path('profile/', user_views.profile, name='profile'),
     path('digits-api/', include('digit_classifier.urls')),
     path('api-auth/', include('rest_framework.urls')),
+    path('crypto-tracker/', include('crypto_tracker.urls')),
 
 ]
 

@@ -1,0 +1,43 @@
+{% extends "home/base_bootstrap.html" %}
+
+{% load static %}
+
+{% block title %}Crypto Tracker{% endblock %}
+
+{% block head %}
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{% static 'crypto?tracker/css/styles.css' %}" type="text/css">
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope='col'>Logo</th>
+                <th scope='col'>Name</th>
+                <th scope='col'>Rank</th>
+                <th scope='col'>Market Cap</th>
+                <th scope='col'>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if data %}
+                {% for obj in data %}
+                    <tr>
+                        <td class="align-middle"><img src={{ obj.image }} height="70" /></td>
+                        <td class="align-middle">{{ obj.name }}</td>
+                        <td class="align-middle">{{ obj.market_cap_rank }}</td>
+                        <td class="align-middle">{{ obj.market_cap }}</td>
+                        <td class="align-middle">{{ obj.current_price }}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+            <h3>Error loading data ...</h3>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}
+    

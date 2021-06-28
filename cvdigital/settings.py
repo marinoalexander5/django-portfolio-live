@@ -65,6 +65,7 @@ INSTALLED_APPS = [
     'blog',
     'users',
     'digit_classifier',
+    'crypto_tracker'
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
